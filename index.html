@@ -52,7 +52,6 @@
       margin:0 auto;
     }
 
-    /* Carte principale avec effet glassmorphism */
     .card{
       background: rgba(255,255,255,.98);
       backdrop-filter:blur(20px);
@@ -63,7 +62,6 @@
       border:1px solid rgba(255,255,255,.3);
     }
 
-    /* En-tête avec dégradé noir/or/rouge */
     .hero{
       position:relative;
       padding:50px 40px;
@@ -177,7 +175,6 @@
       animation:pulse 2s ease-in-out infinite;
     }
 
-    /* Boutons CTA */
     .cta-section{
       padding:35px 40px;
       background:var(--white);
@@ -249,7 +246,6 @@
       flex:0 0 auto;
     }
 
-    /* Corps du contenu */
     .content{
       padding:40px;
     }
@@ -280,7 +276,6 @@
       border-radius:10px;
     }
 
-    /* Grille services moderne */
     .services-grid{
       display:grid;
       grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
@@ -332,7 +327,6 @@
       color:var(--text-light);
     }
 
-    /* Stats modernes */
     .stats-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
@@ -371,7 +365,6 @@
       letter-spacing:.5px;
     }
 
-    /* Footer info */
     .info-box{
       padding:24px;
       background:linear-gradient(135deg, #fef3c7, #fde68a);
@@ -387,21 +380,164 @@
       font-weight:500;
     }
 
-    @media (max-width: 768px){
-      .hero{padding:35px 25px}
-      .content{padding:30px 25px}
-      .cta-section{padding:25px}
-      .hero-content{justify-content:center;text-align:center}
-      .brand{text-align:center}
-      .badges{justify-content:center}
-    }
+    /* ✅ AJOUT : Footer "Créé par AIS Cleaning" (même design premium) */
+    /* ✅ Footer "Créé par AIS Cleaning" — version compacte */
+.creator{
+  padding:16px 22px;
+  background:linear-gradient(135deg, rgba(11,11,11,.92), rgba(184,150,46,.12));
+  border-top:1px solid rgba(0,0,0,.08);
+  color:rgba(255,255,255,.90);
+  position:relative;
+  overflow:hidden;
+}
+
+.creator::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(241,210,122,.10), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(211,47,47,.08), transparent 60%);
+  pointer-events:none;
+}
+
+.creator-inner{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.creator-left{
+  min-width:220px;
+}
+
+.creator-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.20);
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  font-weight:800;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  font-size:11px;
+  color:rgba(255,255,255,.95);
+}
+
+.creator-title{
+  margin-top:8px;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:-.2px;
+}
+
+.creator-sub{
+  margin-top:4px;
+  font-size:12px;
+  line-height:1.5;
+  color:rgba(255,255,255,.72);
+  max-width:520px;
+}
+
+.creator-links{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:9px 10px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.20);
+  background:rgba(255,255,255,.06);
+  color:rgba(255,255,255,.92);
+  font-weight:800;
+  font-size:12px;
+  text-decoration:none;
+  transition:transform .2s cubic-bezier(.4,0,.2,1), background .2s, border-color .2s;
+  position:relative;
+  overflow:hidden;
+  user-select:auto;
+}
+
+.chip::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(45deg, transparent, rgba(255,255,255,.18), transparent);
+  transform:translateX(-110%);
+  transition:transform .6s;
+}
+
+.chip:hover{
+  transform:translateY(-1px);
+  background:rgba(255,255,255,.10);
+  border-color:rgba(241,210,122,.45);
+}
+
+.chip:hover::before{
+  transform:translateX(110%);
+}
+
+.chip strong{
+  background:linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.creator-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.seal{
+  width:36px;
+  height:36px;
+  border-radius:14px;
+  background:linear-gradient(135deg, rgba(212,175,55,.22), rgba(211,47,47,.16));
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 14px 28px rgba(0,0,0,.26);
+  display:grid;
+  place-items:center;
+  font-weight:1000;
+  color:rgba(255,255,255,.92);
+  letter-spacing:-.5px;
+  user-select:none;
+}
+
+.creator-note{
+  font-size:11.5px;
+  color:rgba(255,255,255,.70);
+  line-height:1.35;
+  max-width:240px;
+}
+
+@media (max-width: 768px){
+  .creator{padding:14px 18px}
+  .creator-right{width:100%}
+  .creator-note{max-width:unset}
+}
+
   </style>
 </head>
 
 <body>
   <main class="wrap">
     <article class="card">
-      <!-- En-tête Hero -->
       <header class="hero">
         <div class="hero-content">
           <div class="logo-wrap">
@@ -411,7 +547,7 @@
           <div class="brand">
             <h1>Allocleanup</h1>
             <div class="slogan">✨ Tout beau, tout propre</div>
-            
+
             <div class="badges">
               <span class="badge">
                 <span class="badge-dot"></span>
@@ -428,7 +564,6 @@
         </div>
       </header>
 
-      <!-- Section CTA -->
       <section class="cta-section">
         <div class="cta-grid">
           <a class="btn btn-primary" href="tel:+33666194971">
@@ -455,9 +590,7 @@
         </div>
       </section>
 
-      <!-- Contenu principal -->
       <div class="content">
-        <!-- Services -->
         <section class="section">
           <h2 class="section-title">Nos Services Premium</h2>
           <div class="services-grid">
@@ -488,7 +621,6 @@
           </div>
         </section>
 
-        <!-- Stats -->
         <section class="section">
           <h2 class="section-title">Allocleanup en chiffres</h2>
           <div class="stats-grid">
@@ -511,7 +643,6 @@
           </div>
         </section>
 
-        <!-- Info pratique -->
         <div class="info-box">
           <p>
             <strong>💬 Réponse rapide garantie !</strong><br>
@@ -519,6 +650,38 @@
           </p>
         </div>
       </div>
+
+      <!-- ✅ Footer "Créé par AIS Cleaning" -->
+      <footer class="creator">
+        <div class="creator-inner">
+          <div class="creator-left">
+            <div class="creator-kicker">
+              <span class="badge-dot" style="animation:none"></span>
+              Créé par AIS Cleaning
+            </div>
+
+            <div class="creator-title">Design & page digitale</div>
+            <div class="creator-sub">
+              Page réalisée pour une expérience rapide : contact en 1 clic, design premium, et optimisation mobile.
+            </div>
+
+            <div class="creator-links">
+              <a class="chip" href="tel:+33745234127"><strong>📞</strong> +33 7 45 23 41 27</a>
+              <a class="chip" href="mailto:aispublicityfr@gmail.com?subject=Demande%20de%20page%20digitale"><strong>✉️</strong> aiscleaning59@gmail.com</a>
+              <a class="chip" href="aisnfc.store" target="_blank" rel="noopener"><strong>🌐</strong> website</a>
+            </div>
+          </div>
+
+          <div class="creator-right">
+            <div class="seal">AIS</div>
+            <div class="creator-note">
+              Besoin d’une page similaire pour ton activité ?<br>
+              Contacte AIS publicity pour la création et l’optimisation.
+            </div>
+          </div>
+        </div>
+      </footer>
+
     </article>
   </main>
 </body>
